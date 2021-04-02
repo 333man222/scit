@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function total() {
+            let kor = document.getElementById("kor").innerHTML; //시작된 곳과 끝나는 사이의 내용 (ex. <p>여기 내용</p>)
+            let eng = document.getElementById("eng").innerHTML; //R(read) 이퀄이 왼쪽에 있으면 내용을 읽어 내겠다는 것
+            let mat = document.getElementById("mat").innerHTML;
+
+            let total = parseInt(kor)+ parseInt(eng)+ parseInt(mat);
+            
+            document.getElementById("result").innerHTML = total; //W (write) 이퀄이 오른쪽에 있으면 어떠한 값을 입력하겠다는 것
+
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p id="kor">100</p>
+        <p id="eng">90</p>
+        <p id="mat">95</p>
+        <p id="result">총점 : _점</p>
+        <input type="button" value="총점보기" onclick="total();">
+    </div>
+</body>
+</html>

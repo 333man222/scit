@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>두 번째 테이블</title>
+</head>
+<body>
+    <div>
+        <table border="1"><!--border는 테두리의 두께를 말함 숫자가 클수록 커짐-->
+            <tr>
+                <th>시간</th>
+                <th>월</th><!--td는 좌측정렬 th는 가운데정렬이 자동으로됨-->
+                <th>화</th>
+                <th>수</th>
+            </tr>
+            <tr>
+                <th>1교시</th>
+                <td colspan="3">과학</td><!--옆으로 합칠때 colspan="합치고 싶은 행수 숫자입력"-->
+            
+            </tr>
+            <tr>
+                <th>2교시</th>
+                <td rowspan="2">국어</td><!--표를 합칠때에는 가장 좌측에서부터,가장 위에서부터 입력해야함-->
+                <td>사회</td>
+                <td rowspan="2">체육</td>
+            </tr>
+            <tr>
+                <th>3교시</th>
+                <td>도덕</td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html>

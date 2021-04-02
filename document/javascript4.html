@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myfunc() {
+            let id = document.getElementById("id").value; //id이므로 숫자로 안바꿔줘도 됨
+            //입력하지 않았는지 확인
+            if(id.length < 3 || id.length > 5){
+                alert("아이디는 3~5글자 사이로 입력해 주세요.");
+                return;
+            }
+            let phone = document.getElementById("phone").selectedIndex;
+            let choicePhone ;
+            if(phone == 0) {
+                choicePhone = '010';
+            } else if(phone == 1){
+                choicePhone = '02';
+            } else if(phone == 2) {
+                choicePhone = '031';
+            } else {
+                choicePhone = '051';
+            }
+            let message = '당신의 ID는' + id + '이고, ' + '전화번호 앞자리는' + choicePhone + '입니다.'
+            
+            alert(message)
+        }
+
+    </script>
+</head>
+<body>
+    <div>
+        <input id="id" type="text" placeholder="id로 사용할 문자 3~5자 사이 입력">
+        <select id="phone">
+            <option>010</option> <!--순서를 매길때 0번째 부터 순서를 읽음 0번째 1번째 .....-->
+            <option>02</option>
+            <option>031</option>
+            <option>051</option>
+        </select>    
+        <input type="button" value="입력완성" onclick="myfunc()">
+    </div>
+    
+</body>
+</html>

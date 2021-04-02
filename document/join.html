@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 화면</title> <!--검색엔진에서 키워드로 주로 사용 됨-->
+    <script>
+        //회원가입 데이터 검증
+        //회원가입 정책
+        // 1) id는 3~5글자까지 입력가능
+        // 2) 비밀번호는 비밀번호 확인과 값이 같아야 함
+        // 3) 이름은 반드시 입력해야함
+        function temp(){
+            let userid = document.getElementById("userid");
+            let userpwd1 = document.getElementById("userpwd1");
+            let userpwd2 = document.getElementById("userpwd2");
+            let username = document.getElementById("username");
+            let location = document.getElementById("location").selectedIndex;
+
+            if(userid.value.length < 3 || userid.value.length > 5){
+                alert("아이디는 3~5글자 사이로 입력해주세요.");
+                userid.select();
+                return;
+            }
+            if(userpwd1.value != userpwd2.value){
+                alert("비밀번호와 확인은 같아야 합니다.");
+                userpwd1.select()
+                return;
+            }
+            if(username.value.length == 0){
+                alert("이름은 필수 입력사항입니다.")
+                username.select()
+                return;
+            }
+            let hometown; //ES6 <= 자바스크립트 새 이름 ES에서는 변수를 쓸 때 let을 쓰는 걸 권장함
+
+            if(location == 0){
+                hometown = "서울시";
+            } else if(location ==1 ){
+                hometown = "부산시";
+            } else if(location ==2 ){
+                hometown = "인천시";
+            } else if(location ==3 ){
+                hometown = "수원시";
+            } else{
+                hometown = "제주시";
+            } 
+            let message = '아이디 : ' + userid.value + ', 비밀번호 :' + userpwd1.value + ', 이름 : ' + username.value + ', 지역 :' + hometown ;
+            alert(message);
+            //아이디 : id, 비밀번호 : userpwd1, 이름 :username, 지역 : location
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h1>[ 회원가입 ]</h1>
+        <form method="post">
+        <table border="1">
+            <tr>
+                <th>아이디</th>
+                <td><!--사용자에게 직접 입력값을 받아야 할때에는 value를 넣으면 안됨. value와 placeholder중엔 value가 우선시 됨-->
+                    <input type="text" id="userid" name="userid" placeholder="아이디 3~5자 이내로 입력"><!--placehorder=안내 문구 지워도됨-->
+                    <input type="button" value="중복확인"> <!--모양만 만든것 동작은 없는 버튼-->
+
+                 </td>
+
+            </tr>
+            <tr>
+                <th>비밀번호></th>
+                <td>
+                    <input type="password" id="userpwd1" name="userpwd" placeholder="비밀번호 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호 확인></th>
+                <td>
+                    <input type="password" id="userpwd2" placeholder="비밀번호 확인">
+                </td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td>
+                    <input type="text" id="username" placeholder="실명 입력">
+                </td>
+            </tr>
+            <tr>
+                <th>이메일</th>
+                <td>
+                    <input type="email" id="email" placeholder="확인가능한 이메일" required>
+                </td>
+            </tr>
+            <tr>
+                <th>성별</th>
+                <td>
+                    <input type="radio" id="woman" name="gender" value="여성" checked>여성<!--그룹화 시키고자 하는 것(하나만 선택가능하게)위해 gender입력-->
+                    <input type="radio" id="man"   name="gender" value="남성">남성<!--checked=먼저 체크해놓도록 하는 것 사이트에 남자가 많이오면 남자를 위로 하면 됨-->
+                </td>
+            </tr>
+            <tr>
+                <th>취미</th>
+                <td>
+                    <input type="checkbox" name="hobby" value="스카이다이빙"> 스카이다이빙
+                    <input type="checkbox" name="hobby" value="수영"> 수영
+                    <input type="checkbox" name="hobby" value="영화감상"> 영화감상
+                    <input type="checkbox" name="hobby" value="등산"> 등산
+                    <input type="checkbox" name="hobby" value="독서"> 독서
+                </td>
+            </tr>
+            <tr>
+                <th>지역</th>
+                <td>
+                    <select id="location" name="location">
+                        <option>서울시</option>
+                        <option>부산시</option>
+                        <option>인천시</option>
+                        <option>수원시</option>
+                        <option>제주시</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>자기소개</th>
+                <td><!--자기소개 처럼 긴글을 쓰기위해선 textarea를 써줌-->
+                    <textarea rows="6" cols="40" id="introduce" name="introduce"></textarea><!--텍스트 에어리어는 끝태그가 있지만 중간 사이에 입력X 엔터로 줄을 나누지말고 끝태그옆에 바로 붙일것-->
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" value="회원가입" onclick="temp()"><!--<form>을 테이블 바깥에 입려해줘야 실행됨-->
+                    <input type="reset" value="취소">
+                </th>
+            </tr>
+        </table>
+        </form>
+    </div>
+</body>
+</html>

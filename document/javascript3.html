@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        
+        function total() { //value의 뜻 : 안에 미리 값을 집어 넣어 놓는것,placehorder는 지워지는? 것이니 다름
+            let a = 22;
+        let b = 22;
+        // 첫번째 if
+        // if(a > b){
+// 	alert(a + '이(가)' + b + '보다 크다');
+// }
+        // 두번째 if // else는 단독으로 사용할 수 없고, if의 부속으로만 사용됨!!
+        // if(a>b){
+        //     alert(a + '가' + b + '보다 크다');
+        //     else{       // a <==b
+        //     alert(a + '가' + b + '보다 작거나 같다');
+            
+        //     }
+        // }
+
+        // 세번째 if
+        // if(a>b){
+        //     alert(a + '가' + b + '보다 크다');
+        //  } else if(a<b){    // 여러개 써도 된다
+        //         alert(a + '가' + b + '보다 작다');
+        //  } else {           // 모든 조건에 안맞는 나머지 하나만 처리할 때
+        //     alert(a + '가' + b + '와 같다');
+        //  }
+            
+        
+            
+            let kor = document.getElementById("kor").value; //getElementById 안에는 문자열을 입력한다..내용을 입력 할 시 그 문자열을 가져옴
+            let eng = document.getElementById("eng").value;
+            let mat = document.getElementById("mat").value;
+            // 점수가 100점을 초과하거나 0점 미만이면 경고창 / 실행중지
+
+            //and(&&) : 두 조건이 둘다 true일 때 true
+            //or(||) : 두 건중 하나만 true여도 true
+            if(parseInt(kor) > 100 || parseInt(kor) < 0){
+                alert("점수는 0점 미만이거나 100점을 초과할 수 없습니다.");
+                
+                return;  //100점이 넘었을 때 더 이상 진행을 할 수 없도록 명령어 넣어줌
+            }
+            if(parseInt(eng) > 100 || parseInt(eng) < 0){
+                alert("점수는 0점 미만이거나 100점을 초과할 수 없습니다.");
+                
+                return;
+            }
+            if(parseInt(mat) > 100 || parseInt(mat) < 0){
+                alert("점수는 0점 미만이거나 100점을 초과할 수 없습니다.");
+                
+                return;
+            }
+
+            let total = parseInt(kor) + parseInt(eng) + parseInt(mat); 
+        
+            document.getElementById("result").value = total;
+
+
+            
+            //parseInt 하기 전에 제대로 숫자를 입력했는지 판단을 해야 하므로 if 명령문을 입력함
+        }
+    </script>
+</head>
+<body>
+    <div>
+        국어 : <input id="kor" type="text"><br> <!--끝태그가 없으므로 innerHTML을 못씀(innerHTML은 태그 사이의 값을 불러오는 것이므로)-->
+        영어 : <input id="eng" type="text"><br>
+        수학 : <input id="mat" type="text"><br>
+        총점 : <input id="result" type="text" readonly><br><br>
+
+        <input type="button" value="총점보기" onclick="total();">
+    </div>
+</body>
+</html>

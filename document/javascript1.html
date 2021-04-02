@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function temp() {
+            alert("abc")
+
+        }
+        function temp2() {
+            alert("ccc")
+
+        }
+        function temp3() {
+            //변수 : 값을 저장할 수 있는 메모리공간 변수의 이름 띄어쓰기 특수문자 한글 등 X 맨 앞글자가 숫자여도X
+            // 모든 변수는 선언한 후에 사용해야 한다.
+            let kor = 100;
+            let eng = 95;
+            let mat = 78;
+            let total = kor + eng + mat;
+            
+            let result = document.getElementById("result");
+            let song = document.getElementById("song");
+            let data = song.innerHTML;
+            alert(data);
+            result.innerHTML = total;
+            
+            // 값 : 변수에 담기는 데이터
+
+        }
+    </script>
+</head>
+<body>
+    <p id ="song">나리나리 개나리</p>  
+    <p id="result"></p>
+    <input type="button" value="Click me" onclick="temp()"> <!--onclick 클릭해서 함수를 부르는것=event 라고 부름-->
+    <input type="button" value="Click me2" onclick="temp2()">
+    <input type="button" value="Click me3" onclick="temp3()">
+   
+</body>
+</html>

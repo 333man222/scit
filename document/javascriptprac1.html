@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       function temp() {
+        let kor = 100;
+        let eng = 95;
+        let mat = 78;
+        let total = kor+eng+mat;
+
+        let result = document.getElementById("result");
+        let song = document.getElementById("song");
+        let data = song.innerHTML;
+        alert(data)
+        result.innerHTML = total;
+       }
+
+    </script>
+</head>
+<body>
+    <p id="song">나리나리 개나리</p>
+    <p id="result"></p>
+    <input type="button" value="Click me" onclick="temp()"
+</body>
+</html>

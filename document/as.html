@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>아이디</th>
+            <td><!--사용자에게 직접 입력값을 받아야 할때에는 value를 넣으면 안됨. value와 placeholder중엔 value가 우선시 됨-->
+                <input type="text" name="username" placeholder="아이디를 입력"><!--placehorder=안내 문구 지워도됨-->
+                <input type="button" value="중복확인"> <!--모양만 만든것 동작은 없는 버튼-->
+
+             </td>
+
+        </tr>
+        <tr>
+            <th>비밀번호></th>
+            <td>
+                <input type="password" name="userpwd" placeholder="비밀번호 입력">
+            </td>
+        </tr>
+        <tr>
+            <th>비밀번호 확인></th>
+            <td>
+                <input type="password" placeholder="비밀번호 확인">
+            </td>
+        </tr>
+        <tr>
+            <th>이름</th>
+            <td>
+                <input type="text" placeholder="실명 입력">
+            </td>
+        </tr>
+        <tr>
+            <th>이메일</th>
+            <td>
+                <input type="email" placeholder="확인가능한 이메일" required>
+            </td>
+        </tr>
+        <tr>
+            <th>성별</th>
+            <td>
+                <input type="radio" name="gender" value="여성">여성<!--그룹화 시키고자 하는 것(하나만 선택가능하게)위해 gender입력-->
+                <input type="radio" name="gender" value="남성">남성
+            </td>
+        </tr>
+        <tr>
+            <th>취미</th>
+            <td>
+                <input type="checkbox" name="hobby" value="스카이다이빙"> 스카이다이빙
+                <input type="checkbox" name="hobby" value="수영"> 수영
+                <input type="checkbox" name="hobby" value="영화감상"> 영화감상
+                <input type="checkbox" name="hobby" value="등산"> 등산
+                <input type="checkbox" name="hobby" value="독서"> 독서
+            </td>
+        </tr>
+        <tr>
+            <th>지역</th>
+            <td>
+                <select name="location">
+                    <option>서울시</option>
+                    <option>부산시</option>
+                    <option>인천시</option>
+                    <option>수원시</option>
+                    <option>제주시</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>자기소개</th>
+            <td><!--자기소개 처럼 긴글을 쓰기위해선 textarea를 써줌-->
+                <textarea rows="6" cols="40" name="introduce"></textarea><!--텍스트 에어리어는 끝태그가 있지만 중간 사이에 입력X 엔터로 줄을 나누지말고 끝태그옆에 바로 붙일것-->
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                <input type="submit" value="회원가입" onclick="validation()"><!--<form>을 테이블 바깥에 입려해줘야 실행됨-->
+                <input type="reset" value="취소">
+            </th>
+        </tr>
+    </table>
+</body>
+</html>
