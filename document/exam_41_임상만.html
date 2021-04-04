@@ -52,7 +52,7 @@ function validation(){
         userpwd1.select();
         return;
     }
-    if(userpwd1.value.length <1 || userpwd1.value.length > 5 ){
+    if(userpwd1.value.length <= 1 || userpwd1.value.length >= 5 ){
         alert("비밀번호의 길이는 1~5글자로 입력하시오");
         userpwd1.select();
         return;
