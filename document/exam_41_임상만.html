@@ -13,10 +13,31 @@
     function temp1(){
     
     let total='** 나의 이름은 : 홍길동입니다'
-            let too = document.getElementById("too");
+
             let result = document.getElementById("result");
             result.innerHTML = total;
 }
+    function calculator() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let oper = document.getElementById("oper").selectedIndex;
+            let num2 = parseInt(document.getElementById("num2").value);
+            console.log('num2 : ' + num2);
+
+            let result = document.getElementById("resultCal");
+
+        let resultValue = 0;
+            if ( oper === 0 ){
+                resultValue = num1 + num2 ;
+            } else if ( oper === 1){
+                resultValue = num1 - num2 ;
+            } else if ( oper === 2 ){
+                resultValue = num1 * num2 ;
+            } else {
+                resultValue = num1 / num2 ;
+            }
+
+        result.value = resultValue;
+    }
 function validation(){
     let userid = document.getElementById("userid");
     let userpwd1 = document.getElementById("userpwd1");
@@ -31,19 +52,16 @@ function validation(){
         userpwd1.select();
         return;
     }
-    if(userpwd1.value.length <1 || userpwd1.value.length >= 5 ){
+    if(userpwd1.value.length <= 1 || userpwd1.value.length >= 5 ){
         alert("비밀번호의 길이는 1~5글자로 입력하시오");
         userpwd1.select();
         return;
     }
     let message = '회원가입이 완료되었습니다';
     alert(message);
+
 }
-    function total(){
-        let total = parseInt(ko) + parseInt(ok) + parseInt(mat); 
-        
-        document.getElementById("result").value = total;
-    }
+
 </script>
 
 </head>
@@ -87,16 +105,16 @@ function validation(){
 
     <h1>[ 문제 4 ]</h1>
     <div>
-        <input id=ko type="text" >
+        <input id="num1" type="text" >
         <select id="oper">
             <option>+</option>
             <option>-</option>
             <option>*</option>
             <option>/</option>
         </select>
-        <input id=ok type="text" >
-        <input id="resultt"type="button" value="=" onclick="total()">
-        <input type="text">
+        <input id="num2" type="text" >
+        <input type="button" value="=" onclick="calculator()">
+        <input id="resultCal" type="text">
     </div>
 </body>
 </html>
